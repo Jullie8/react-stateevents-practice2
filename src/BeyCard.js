@@ -1,12 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 
 class BeyCard extends React.Component {
+
+  handlesClick = () =>{
+    this.props.clickHandler(this.props.beyInfo)
+  }
   render() {
-    console.log(this.props);
     return (
       <div>
-        <h3>{/*Bey name goes here*/}</h3>
-        {/*image tag goes here*/}
+        <h3>{this.props.beyInfo.name}</h3>
+       <img alt="bey" src={this.props.beyInfo.img} onClick={this.handlesClick}/>
+
       </div>
     );
   }
